@@ -211,8 +211,99 @@ function initChart() {
     });
 }
 
+function initKPICharts() {
+    // KPI 1: Horizontal Bar Chart (Time)
+    new Chart(document.getElementById('kpiChart1').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Traditional (6개월)', 'PBV (2주)'],
+            datasets: [{
+                data: [180, 14], // in days roughly
+                backgroundColor: ['#9ca3af', '#002c5f'],
+                borderRadius: 4
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { display: false },
+                y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } }
+            }
+        }
+    });
+
+    // KPI 2: Doughnut Chart (Cost Savings)
+    new Chart(document.getElementById('kpiChart2').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: ['재투자 비용 (30%)', '절감 비용 (70%)'],
+            datasets: [{
+                data: [30, 70],
+                backgroundColor: ['#002c5f', '#e5e7eb'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            cutout: '75%',
+            plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: {size: 11} } } }
+        }
+    });
+
+    // KPI 3: Box/Range Bar Chart equivalent (Bar with error bars conceptually, here using stacked bar for range)
+    new Chart(document.getElementById('kpiChart3').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Traditional', 'PBV Cell'],
+            datasets: [
+                {
+                    label: 'Base',
+                    data: [95, 60], // Offset to center the range
+                    backgroundColor: 'transparent'
+                },
+                {
+                    label: '유연성 (허용 편차)',
+                    data: [10, 80], // Range: ±5% vs ±40%
+                    backgroundColor: ['#9ca3af', '#002c5f'],
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: {
+            indexAxis: 'y',
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { display: false, stacked: true },
+                y: { stacked: true, grid: { display: false }, ticks: { font: { weight: 'bold' } } }
+            }
+        }
+    });
+
+    // KPI 4: Doughnut Chart (Space)
+    new Chart(document.getElementById('kpiChart4').getContext('2d'), {
+        type: 'pie',
+        data: {
+            labels: ['유효 공간', '데드스페이스'],
+            datasets: [{
+                data: [85, 15], // PBV space utilization
+                backgroundColor: ['#002c5f', '#9ca3af'],
+                borderWidth: 1,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: {size: 11} } } }
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     renderTabs();
     updateContent("structure");
     initChart();
+    initKPICharts();
 });

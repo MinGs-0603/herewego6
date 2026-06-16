@@ -77,8 +77,64 @@
         </div>
     </section>
 
+    <!-- KPI Section -->
+    <section class="mb-32 slide-up" style="animation-delay: 0.3s;">
+        <div class="flex flex-col items-center mb-12">
+            <div class="inline-block border border-[#002c5f] text-xs font-bold tracking-widest uppercase px-3 py-1 mb-4 text-[#002c5f]">Quantitative Analysis</div>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 mb-4">핵심 성과 지표 (KPI) 예측치</h2>
+            <div class="w-12 h-1 bg-[#002c5f]"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- KPI 1 -->
+            <div class="bg-white border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">신차 라인 전환 시간</h3>
+                    <span class="text-[#002c5f] font-extrabold text-xl">2주</span>
+                </div>
+                <p class="text-sm text-gray-500 mb-6 h-10">AGV 경로 및 로봇 SW 제어만 업데이트하여 6개월에서 2주로 극단적 단축</p>
+                <div class="h-32 relative w-full">
+                    <canvas id="kpiChart1"></canvas>
+                </div>
+            </div>
+            <!-- KPI 2 -->
+            <div class="bg-white border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">신차 투입 설비 투자비</h3>
+                    <span class="text-[#002c5f] font-extrabold text-xl">-70%</span>
+                </div>
+                <p class="text-sm text-gray-500 mb-6 h-10">기존 인프라 100% 재활용 및 특화 툴링 교체만으로 압도적 비용 절감</p>
+                <div class="h-32 relative w-full">
+                    <canvas id="kpiChart2"></canvas>
+                </div>
+            </div>
+            <!-- KPI 3 -->
+            <div class="bg-white border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">택트 타임 허용 편차</h3>
+                    <span class="text-[#002c5f] font-extrabold text-xl">±40%</span>
+                </div>
+                <p class="text-sm text-gray-500 mb-6 h-10">셀 구조의 독립성으로 병목 현상을 완충하여 고도의 비동기화 혼류 생산 수용</p>
+                <div class="h-32 relative w-full">
+                    <canvas id="kpiChart3"></canvas>
+                </div>
+            </div>
+            <!-- KPI 4 -->
+            <div class="bg-white border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">유효 공간 및 동선</h3>
+                    <span class="text-[#002c5f] font-extrabold text-xl">+30%</span>
+                </div>
+                <p class="text-sm text-gray-500 mb-6 h-10">고정 컨베이어 제거 및 AGV 최단 거리 연산으로 데드스페이스 대폭 감소</p>
+                <div class="h-32 relative w-full flex items-center justify-center">
+                    <canvas id="kpiChart4"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Expert Insight -->
-    <section class="slide-up delay-300">
+    <section class="slide-up" style="animation-delay: 0.4s;">
         <div class="bg-[#0b101a] text-white p-12 md:p-20 relative overflow-hidden border-t-4 border-[#002c5f]">
             <div class="absolute right-0 top-0 w-1/2 h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGVsbGlwc2UgY3g9IjIwIiBjeT0iMjAiIHJ4PSIxIiByeT0iMSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==')]"></div>
             
